@@ -15,6 +15,8 @@
 		C2C458DE21C987B400441704 /* visionFrontEndTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C458DD21C987B400441704 /* visionFrontEndTests.swift */; };
 		C2D6A21A21C9A9E70036A820 /* signUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D6A21921C9A9E70036A820 /* signUpController.swift */; };
 		C2D6A21C21C9AA0E0036A820 /* homeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D6A21B21C9AA0E0036A820 /* homeController.swift */; };
+		C2EA4C4B21CD7C8B0082616B /* CreateBetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EA4C4A21CD7C8B0082616B /* CreateBetController.swift */; };
+		C2EA4C4D21CD7CF20082616B /* SingleBetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EA4C4C21CD7CF20082616B /* SingleBetController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		C2C458DF21C987B400441704 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2D6A21921C9A9E70036A820 /* signUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpController.swift; sourceTree = "<group>"; };
 		C2D6A21B21C9AA0E0036A820 /* homeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeController.swift; sourceTree = "<group>"; };
+		C2EA4C4A21CD7C8B0082616B /* CreateBetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBetController.swift; sourceTree = "<group>"; };
+		C2EA4C4C21CD7CF20082616B /* SingleBetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleBetController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,8 @@
 		C2C458EA21C9A68100441704 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C2EA4C4C21CD7CF20082616B /* SingleBetController.swift */,
+				C2EA4C4A21CD7C8B0082616B /* CreateBetController.swift */,
 				C2D6A21921C9A9E70036A820 /* signUpController.swift */,
 				C2C458CA21C987B300441704 /* logInController.swift */,
 				C2D6A21B21C9AA0E0036A820 /* homeController.swift */,
@@ -229,8 +235,10 @@
 			files = (
 				C2D6A21C21C9AA0E0036A820 /* homeController.swift in Sources */,
 				C2C458CB21C987B300441704 /* logInController.swift in Sources */,
+				C2EA4C4B21CD7C8B0082616B /* CreateBetController.swift in Sources */,
 				C2D6A21A21C9A9E70036A820 /* signUpController.swift in Sources */,
 				C2C458C921C987B300441704 /* AppDelegate.swift in Sources */,
+				C2EA4C4D21CD7CF20082616B /* SingleBetController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
