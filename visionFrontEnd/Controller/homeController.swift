@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import ExpandingMenu
 
 class homeController: UIViewController {
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        _ = menuNavigator(currVC: self).getMenu()
     }
     
 

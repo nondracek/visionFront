@@ -1,0 +1,20 @@
+PODS:
+  - Alamofire (5.0.0.beta.1)
+  - ExpandingMenu (0.4.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.0.0.beta.1)
+  - ExpandingMenu (~> 0.4)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - ExpandingMenu
+
+SPEC CHECKSUMS:
+  Alamofire: 2ef6d6c984c5d21c366e9b41a9ae7dfee2b67a44
+  ExpandingMenu: 3187a4ed1aa1aea85418e444c213e4cd6063c122
+
+PODFILE CHECKSUM: 02d2320d969094507158909880ccae6317ff1cfc
+
+COCOAPODS: 1.5.3

@@ -10,15 +10,34 @@ import UIKit
 
 class logInController: UIViewController {
     
+    @IBOutlet weak var usernameField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    
+    let authObject = Authentication()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(false)
+        
+        if UserDefaults.standard.string(forKey: "authToken") != nil {
+            performSegue(withIdentifier: "logInSegue", sender: self)
+        }
     }
     
     @IBAction func logInPressed(_ sender: Any) {
+        authObject.logUserIn(user: usernameField.text!, pass: passwordField.text!){ (error) in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
         
-        performSegue(withIdentifier: "logInSegue", sender: self)
+        if UserDefaults.standard.string(forKey: "authToken") != nil {
+            performSegue(withIdentifier: "logInSegue", sender: self)
+        }
+        
     }
     
     

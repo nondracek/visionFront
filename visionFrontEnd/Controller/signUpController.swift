@@ -10,16 +10,34 @@ import UIKit
 
 class signUpController: UIViewController {
 
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var usernameField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    
+    let authObject = Authentication()
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
     
     @IBAction func signUpPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        authObject .userSignUp(user: usernameField.text!, pass: passwordField.text!, email: emailField.text!){ (error) in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+        
+        if UserDefaults.standard.string(forKey: "authToken") != nil {
+            dismiss(animated: true, completion: nil)
+        }
+        
     }
     
+    @IBAction func backPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 

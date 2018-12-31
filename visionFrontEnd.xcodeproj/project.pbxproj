@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7DA0E4CBD141C9B31E738481 /* Pods_visionFrontEnd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 807E67B9F22BE3100D395C21 /* Pods_visionFrontEnd.framework */; };
+		992F0519C9EA6ADFA6327798 /* Pods_visionFrontEndTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20BA00614A61E3CDA760603B /* Pods_visionFrontEndTests.framework */; };
+		C28D763221D279DF00403538 /* menuClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28D763121D279DF00403538 /* menuClass.swift */; };
+		C28D763421D2A41E00403538 /* profileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28D763321D2A41E00403538 /* profileController.swift */; };
+		C28D763621D2AF9B00403538 /* authenticationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28D763521D2AF9B00403538 /* authenticationModel.swift */; };
+		C28D763821D2B08700403538 /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28D763721D2B08700403538 /* config.swift */; };
+		C28D763C21D3105200403538 /* singleBetCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28D763B21D3105200403538 /* singleBetCellController.swift */; };
+		C2C4589321D5CF1C004AFD8C /* singleBetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C4589221D5CF1C004AFD8C /* singleBetModel.swift */; };
+		C2C4589521D60EBF004AFD8C /* httpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C4589421D60EBF004AFD8C /* httpModel.swift */; };
 		C2C458C921C987B300441704 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C458C821C987B300441704 /* AppDelegate.swift */; };
 		C2C458CB21C987B300441704 /* logInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C458CA21C987B300441704 /* logInController.swift */; };
 		C2C458CE21C987B300441704 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2C458CC21C987B300441704 /* Main.storyboard */; };
@@ -30,6 +39,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		20BA00614A61E3CDA760603B /* Pods_visionFrontEndTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_visionFrontEndTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		20CFE39374A606E55A77836D /* Pods-visionFrontEnd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-visionFrontEnd.release.xcconfig"; path = "Pods/Target Support Files/Pods-visionFrontEnd/Pods-visionFrontEnd.release.xcconfig"; sourceTree = "<group>"; };
+		31FB7BAF1CBC28BDE67EE653 /* Pods-visionFrontEnd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-visionFrontEnd.debug.xcconfig"; path = "Pods/Target Support Files/Pods-visionFrontEnd/Pods-visionFrontEnd.debug.xcconfig"; sourceTree = "<group>"; };
+		408FBD449D2465CC32FD65D4 /* Pods-visionFrontEndTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-visionFrontEndTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-visionFrontEndTests/Pods-visionFrontEndTests.debug.xcconfig"; sourceTree = "<group>"; };
+		807E67B9F22BE3100D395C21 /* Pods_visionFrontEnd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_visionFrontEnd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CAA8FD49210081A834E8493 /* Pods-visionFrontEndTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-visionFrontEndTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-visionFrontEndTests/Pods-visionFrontEndTests.release.xcconfig"; sourceTree = "<group>"; };
+		C28D763121D279DF00403538 /* menuClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuClass.swift; sourceTree = "<group>"; };
+		C28D763321D2A41E00403538 /* profileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileController.swift; sourceTree = "<group>"; };
+		C28D763521D2AF9B00403538 /* authenticationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = authenticationModel.swift; sourceTree = "<group>"; };
+		C28D763721D2B08700403538 /* config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
+		C28D763B21D3105200403538 /* singleBetCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = singleBetCellController.swift; sourceTree = "<group>"; };
+		C2AF064421D9EA55002185AF /* visionFrontEnd.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = visionFrontEnd.entitlements; sourceTree = "<group>"; };
+		C2C4589221D5CF1C004AFD8C /* singleBetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = singleBetModel.swift; sourceTree = "<group>"; };
+		C2C4589421D60EBF004AFD8C /* httpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = httpModel.swift; sourceTree = "<group>"; };
 		C2C458C521C987B300441704 /* visionFrontEnd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = visionFrontEnd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2C458C821C987B300441704 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2C458CA21C987B300441704 /* logInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logInController.swift; sourceTree = "<group>"; };
@@ -51,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DA0E4CBD141C9B31E738481 /* Pods_visionFrontEnd.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,18 +82,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				992F0519C9EA6ADFA6327798 /* Pods_visionFrontEndTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03CF3386B6711C24FDBB87B8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				31FB7BAF1CBC28BDE67EE653 /* Pods-visionFrontEnd.debug.xcconfig */,
+				20CFE39374A606E55A77836D /* Pods-visionFrontEnd.release.xcconfig */,
+				408FBD449D2465CC32FD65D4 /* Pods-visionFrontEndTests.debug.xcconfig */,
+				8CAA8FD49210081A834E8493 /* Pods-visionFrontEndTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3EA7E7EC1AE76439F7FE24AC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				807E67B9F22BE3100D395C21 /* Pods_visionFrontEnd.framework */,
+				20BA00614A61E3CDA760603B /* Pods_visionFrontEndTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C2C458BC21C987B300441704 = {
 			isa = PBXGroup;
 			children = (
 				C2C458C721C987B300441704 /* visionFrontEnd */,
 				C2C458DC21C987B400441704 /* visionFrontEndTests */,
 				C2C458C621C987B300441704 /* Products */,
+				03CF3386B6711C24FDBB87B8 /* Pods */,
+				3EA7E7EC1AE76439F7FE24AC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,6 +132,7 @@
 		C2C458C721C987B300441704 /* visionFrontEnd */ = {
 			isa = PBXGroup;
 			children = (
+				C2AF064421D9EA55002185AF /* visionFrontEnd.entitlements */,
 				C2C458EA21C9A68100441704 /* Controller */,
 				C2C458E921C9A67800441704 /* View */,
 				C2C458E821C9A66F00441704 /* Model */,
@@ -107,6 +155,11 @@
 		C2C458E821C9A66F00441704 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C28D763121D279DF00403538 /* menuClass.swift */,
+				C28D763521D2AF9B00403538 /* authenticationModel.swift */,
+				C28D763721D2B08700403538 /* config.swift */,
+				C2C4589221D5CF1C004AFD8C /* singleBetModel.swift */,
+				C2C4589421D60EBF004AFD8C /* httpModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -128,6 +181,8 @@
 				C2D6A21921C9A9E70036A820 /* signUpController.swift */,
 				C2C458CA21C987B300441704 /* logInController.swift */,
 				C2D6A21B21C9AA0E0036A820 /* homeController.swift */,
+				C28D763321D2A41E00403538 /* profileController.swift */,
+				C28D763B21D3105200403538 /* singleBetCellController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -139,9 +194,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C2C458E221C987B400441704 /* Build configuration list for PBXNativeTarget "visionFrontEnd" */;
 			buildPhases = (
+				ACB3A5F18A8BA15C8AC10152 /* [CP] Check Pods Manifest.lock */,
 				C2C458C121C987B300441704 /* Sources */,
 				C2C458C221C987B300441704 /* Frameworks */,
 				C2C458C321C987B300441704 /* Resources */,
+				53DE42869C3F2305F5B24E65 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -156,6 +213,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C2C458E521C987B400441704 /* Build configuration list for PBXNativeTarget "visionFrontEndTests" */;
 			buildPhases = (
+				4001B0085F6D5B204BE8ADFD /* [CP] Check Pods Manifest.lock */,
 				C2C458D521C987B400441704 /* Sources */,
 				C2C458D621C987B400441704 /* Frameworks */,
 				C2C458D721C987B400441704 /* Resources */,
@@ -182,6 +240,11 @@
 				TargetAttributes = {
 					C2C458C421C987B300441704 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					C2C458D821C987B400441704 = {
 						CreatedOnToolsVersion = 10.1;
@@ -228,17 +291,87 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4001B0085F6D5B204BE8ADFD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-visionFrontEndTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		53DE42869C3F2305F5B24E65 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-visionFrontEnd/Pods-visionFrontEnd-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ExpandingMenu/ExpandingMenu.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ExpandingMenu.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-visionFrontEnd/Pods-visionFrontEnd-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ACB3A5F18A8BA15C8AC10152 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-visionFrontEnd-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C2C458C121C987B300441704 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2C4589521D60EBF004AFD8C /* httpModel.swift in Sources */,
 				C2D6A21C21C9AA0E0036A820 /* homeController.swift in Sources */,
 				C2C458CB21C987B300441704 /* logInController.swift in Sources */,
 				C2EA4C4B21CD7C8B0082616B /* CreateBetController.swift in Sources */,
+				C28D763821D2B08700403538 /* config.swift in Sources */,
+				C2C4589321D5CF1C004AFD8C /* singleBetModel.swift in Sources */,
 				C2D6A21A21C9A9E70036A820 /* signUpController.swift in Sources */,
+				C28D763221D279DF00403538 /* menuClass.swift in Sources */,
 				C2C458C921C987B300441704 /* AppDelegate.swift in Sources */,
 				C2EA4C4D21CD7CF20082616B /* SingleBetController.swift in Sources */,
+				C28D763C21D3105200403538 /* singleBetCellController.swift in Sources */,
+				C28D763421D2A41E00403538 /* profileController.swift in Sources */,
+				C28D763621D2AF9B00403538 /* authenticationModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,9 +531,12 @@
 		};
 		C2C458E321C987B400441704 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31FB7BAF1CBC28BDE67EE653 /* Pods-visionFrontEnd.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = visionFrontEnd/visionFrontEnd.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 778AAH2669;
 				INFOPLIST_FILE = visionFrontEnd/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -415,9 +551,12 @@
 		};
 		C2C458E421C987B400441704 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 20CFE39374A606E55A77836D /* Pods-visionFrontEnd.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = visionFrontEnd/visionFrontEnd.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 778AAH2669;
 				INFOPLIST_FILE = visionFrontEnd/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -432,6 +571,7 @@
 		};
 		C2C458E621C987B400441704 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 408FBD449D2465CC32FD65D4 /* Pods-visionFrontEndTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -452,6 +592,7 @@
 		};
 		C2C458E721C987B400441704 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8CAA8FD49210081A834E8493 /* Pods-visionFrontEndTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
