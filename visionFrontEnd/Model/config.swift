@@ -9,5 +9,6 @@
 import Foundation
 
 public struct serverVars {
-    static var serverHost = "https://vision-back.herokuapp.com"
+//    static var serverHost = "https://vision-back.herokuapp.com"
+    static var serverHost = "http://localhost:3000"
 }

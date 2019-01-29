@@ -23,7 +23,7 @@ class signUpController: UIViewController {
     }
     
     @IBAction func signUpPressed(_ sender: Any) {
-        authObject .userSignUp(user: usernameField.text!, pass: passwordField.text!, email: emailField.text!){ (error) in
+        authObject .userSignUp(user: usernameField.text!, pass: passwordField.text!, email: emailField.text!, deviceID: authObject.getDeviceID()!){ (error) in
             if let error = error {
                 print(error.localizedDescription)
             }

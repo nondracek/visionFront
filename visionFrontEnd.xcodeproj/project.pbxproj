@@ -14,6 +14,7 @@
 		C28D763621D2AF9B00403538 /* authenticationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28D763521D2AF9B00403538 /* authenticationModel.swift */; };
 		C28D763821D2B08700403538 /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28D763721D2B08700403538 /* config.swift */; };
 		C28D763C21D3105200403538 /* singleBetCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28D763B21D3105200403538 /* singleBetCellController.swift */; };
+		C29E8BFF21E7E40800E987FD /* notificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29E8BFE21E7E40800E987FD /* notificationHandler.swift */; };
 		C2C4589321D5CF1C004AFD8C /* singleBetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C4589221D5CF1C004AFD8C /* singleBetModel.swift */; };
 		C2C4589521D60EBF004AFD8C /* httpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C4589421D60EBF004AFD8C /* httpModel.swift */; };
 		C2C458C921C987B300441704 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C458C821C987B300441704 /* AppDelegate.swift */; };
@@ -50,6 +51,7 @@
 		C28D763521D2AF9B00403538 /* authenticationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = authenticationModel.swift; sourceTree = "<group>"; };
 		C28D763721D2B08700403538 /* config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
 		C28D763B21D3105200403538 /* singleBetCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = singleBetCellController.swift; sourceTree = "<group>"; };
+		C29E8BFE21E7E40800E987FD /* notificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notificationHandler.swift; sourceTree = "<group>"; };
 		C2AF064421D9EA55002185AF /* visionFrontEnd.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = visionFrontEnd.entitlements; sourceTree = "<group>"; };
 		C2C4589221D5CF1C004AFD8C /* singleBetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = singleBetModel.swift; sourceTree = "<group>"; };
 		C2C4589421D60EBF004AFD8C /* httpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = httpModel.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				C28D763721D2B08700403538 /* config.swift */,
 				C2C4589221D5CF1C004AFD8C /* singleBetModel.swift */,
 				C2C4589421D60EBF004AFD8C /* httpModel.swift */,
+				C29E8BFE21E7E40800E987FD /* notificationHandler.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 				C2D6A21A21C9A9E70036A820 /* signUpController.swift in Sources */,
 				C28D763221D279DF00403538 /* menuClass.swift in Sources */,
 				C2C458C921C987B300441704 /* AppDelegate.swift in Sources */,
+				C29E8BFF21E7E40800E987FD /* notificationHandler.swift in Sources */,
 				C2EA4C4D21CD7CF20082616B /* SingleBetController.swift in Sources */,
 				C28D763C21D3105200403538 /* singleBetCellController.swift in Sources */,
 				C28D763421D2A41E00403538 /* profileController.swift in Sources */,

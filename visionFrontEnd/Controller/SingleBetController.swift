@@ -8,57 +8,67 @@
 
 import UIKit
 
-class SingleBetController: UIViewController, UITableViewDataSource {
+class SingleBetController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-
-    @IBOutlet weak var betList: UITableView!
+    @IBOutlet weak var betTable: UITableView!
     
-    var data = [String]()
     let betModel = SingleBet()
+    let notifModel = notificationHandler()
+    var bets = [allBetReturn]()
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        betTable.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        betList.dataSource = self
-        betList.rowHeight = self.view.bounds.height / 5
-        
-        
-        for i in 0...1000 {
-            data.append("\(i)")
-        }
         
         if let userID = UserDefaults.standard.string(forKey: "userID") {
-            let bets = betModel.getBets(userID: userID) {(error) in
-                print(error!.localizedDescription)
+            if let allBets = betModel.getBets(userID: userID, completion: {(error) in
+                print(error!)
+            }) {
+                    bets = allBets
+                }
             }
-            print(bets)
         }
-        
-        
-        
-        menuNavigator(currVC: self)
-        
-        
-    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        return bets.count
     }
     
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "singleBetCell")! as! singleBetCellController
-        cell.betAmount.text = data[indexPath.row]
-        cell.betName.text = "foo"
-        cell.betParticipants.text = "bob"
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "betCell", for: indexPath) as! betCellModel
+        cell.titleLabel.text = bets[indexPath.item].title
+        cell.participantLabel.text = "Against: " + bets[indexPath.item].participants![1]
+        cell.amountLabel.text = "$ \(bets[indexPath.item].amount!)"
         return cell
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+    @IBAction func printBets(_ sender: Any) {
+        print(bets)
     }
     
-    @IBAction func createNewBet(_ sender: Any) {
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return data.count
+//    }
+//
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "singleBetCell")! as! singleBetCellController
+//        cell.betAmount.text = data[indexPath.row]
+//        cell.betName.text = "foo"
+//        cell.betParticipants.text = "bob"
+//
+//        return cell
+//    }
+    
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        return 1
+//    }
+    
+    @IBAction func createBet(_ sender: Any) {
         let popUpVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "sbNewBetPopUpID") as! CreateBetController
         
         self.addChild(popUpVC)
@@ -66,22 +76,30 @@ class SingleBetController: UIViewController, UITableViewDataSource {
         self.view.addSubview(popUpVC.view)
         popUpVC.didMove(toParent: self)
     }
-    
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
     struct singleBet: Codable {
         let name: String
         let amount: Float
         let createdBy: String
         let participants: [String]
     }
+}
 
+class betCellModel: UITableViewCell {
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var amountLabel: UILabel!
+    @IBOutlet weak var participantLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        // Configure the view for the selected state
+    }
+    
 }

@@ -13,11 +13,17 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let notifHandler = notificationHandler()
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        registerForPushNotifications()
+//        registerForPushNotifications()
         // Override point for customization after application launch.
+        if let payload = launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] as? NSDictionary, let identifier = payload["storyboardID"] as? String {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: identifier)
+            window?.rootViewController = vc
+        }
         return true
     }
 
@@ -50,6 +56,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ) {
         let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
         let token = tokenParts.joined()
+        if let user = UserDefaults.standard.string(forKey: "username") {
+            notifHandler.updateNotifID(user: user, notifID: token) {(error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                }
+            }
+        }
         print("Device Token: \(token)")
     }
     
@@ -59,25 +72,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("Failed to register: \(error)")
     }
     
-    func registerForPushNotifications() {
-        UNUserNotificationCenter.current()
-            .requestAuthorization(options: [.alert, .sound, .badge]) {
-                [weak self] granted, error in
-                
-                print("Permission granted: \(granted)")
-                guard granted else { return }
-                self?.getNotificationSettings()
-        }
-    }
-    
-    func getNotificationSettings() {
-        UNUserNotificationCenter.current().getNotificationSettings { settings in
-            print("Notification settings: \(settings)")
-            guard settings.authorizationStatus == .authorized else { return }
-            DispatchQueue.main.async {
-                UIApplication.shared.registerForRemoteNotifications()
-            }
-        }
-    }
+//    func registerForPushNotifications() {
+//        UNUserNotificationCenter.current()
+//            .requestAuthorization(options: [.alert, .sound, .badge]) {
+//                [weak self] granted, error in
+//
+//                print("Permission granted: \(granted)")
+//                guard granted else { return }
+//                self?.getNotificationSettings()
+//        }
+//    }
+//
+//    func getNotificationSettings() {
+//        UNUserNotificationCenter.current().getNotificationSettings { settings in
+//            print("Notification settings: \(settings)")
+//            guard settings.authorizationStatus == .authorized else { return }
+//            DispatchQueue.main.async {
+//                UIApplication.shared.registerForRemoteNotifications()
+//            }
+//        }
+//    }
 }
 

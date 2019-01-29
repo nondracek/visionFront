@@ -24,7 +24,7 @@ class SingleBet {
         do {
             let jsonData = try encoder.encode(newBet)
             
-            _ = http.sendRequest(url: url, httpMethod: "POST", data: jsonData) {(error) in
+            _ = http.sendRequest(url: url, httpMethod: "POST", data: jsonData, headers: nil) {(error) in
                 completion?(error)
             }
             
@@ -33,32 +33,27 @@ class SingleBet {
         }
     }
     
-    func getBets(userID: String, completion:((Error?) -> Void)?) -> Any {
+    func getBets(userID: String, completion:((Error?) -> Void)?) -> [allBetReturn]? {
         guard let url = URL(string: serverVars.serverHost + "/bets/allSingles") else
         {
             completion?(SingleBetErrors.invalidURLSet)
-            return []
+            return nil
         }
         
-        let bodyData = getBet(user: userID)
-        let encoder = JSONEncoder()
+        let headers = ["userID": userID]
         do {
-            let jsonData = try encoder.encode(bodyData)
             
-            let betData = http.sendRequest(url: url, httpMethod: "GET", data: jsonData) {(error) in
+            let betData = http.sendRequest(url: url, httpMethod: "GET", data: nil, headers: headers) {(error) in
                 completion?(error)
             }
-//            let json = try JSONSerialization.jsonObject(with: betData, options: []) as Any
             
 //            let json = try JSONSerialization.jsonObject(with: betData, options: []) as? Array<[String: Any]>
-            print(String(data: betData, encoding: .utf8 ))
-            
-//            return betData
-            return []
+            let json = try JSONDecoder().decode([allBetReturn].self, from: betData)
+            return json
             
         } catch {
             completion?(error)
-            return []
+            return nil
         }
     }
     
@@ -69,6 +64,8 @@ class SingleBet {
         let title: String
         let creationTime: Date
     }
+    
+
 
     struct getBet: Codable {
         let user: String
@@ -78,4 +75,18 @@ class SingleBet {
     enum SingleBetErrors: Error {
         case invalidURLSet
     }
+}
+
+public struct allBetReturn: Codable {
+    let title: String?
+    //        let _id: String?
+    //        let __v: Int?
+    //        let submissions: Dictionary<String, String>?
+    let creationTime: String?
+    //        let creator: String?
+    let amount: Float?
+    let cancellations: Dictionary<String, Bool>?
+    let status: String?
+    let participants: Array<String>?
+    //        let accepted: Dictionary<String, Int>?
 }

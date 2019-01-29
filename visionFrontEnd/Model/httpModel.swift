@@ -10,7 +10,7 @@ import Foundation
 
 class httpModel {
     
-    func sendRequest(url: URL, httpMethod: String, data: Data, completion:((Error?) -> Void)?) -> Data {
+    func sendRequest(url: URL, httpMethod: String, data: Data?, headers: Dictionary<String, String>?, completion:((Error?) -> Void)?) -> Data {
         var returnData = Data()
         let postCall = DispatchGroup()
         postCall.enter()
@@ -18,11 +18,20 @@ class httpModel {
         var request = URLRequest(url: url)
         request.timeoutInterval = 1000
         request.httpMethod = httpMethod
-        request.httpBody = data
+        if data != nil {
+            request.httpBody = data
+        }
+        
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         if let JWT = UserDefaults.standard.string(forKey: "authToken") {
             let headerToken = "Bearer ".appending(JWT)
             request.addValue(headerToken, forHTTPHeaderField: "Authorization")
+        }
+        
+        if let additionalHeaders = headers {
+            for (key, value) in additionalHeaders {
+                request.addValue(value, forHTTPHeaderField: key)
+            }
         }
         
         let session = URLSession(configuration: URLSessionConfiguration.default)
@@ -35,7 +44,6 @@ class httpModel {
             
             // APIs usually respond with the data you just sent in your POST request
             if let data = responseData {
-                print(response)
                 returnData = data
             }
             

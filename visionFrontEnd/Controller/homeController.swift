@@ -14,11 +14,14 @@ class homeController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        _ = menuNavigator(currVC: self).getMenu()
+//        
+//        _ = menuNavigator(currVC: self).getMenu()
     }
     
-
+    @IBAction func buttonPress(_ sender: Any) {
+        performSegue(withIdentifier: "justGo", sender: self)
+    }
+    
     /*
     // MARK: - Navigation
 
