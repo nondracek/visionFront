@@ -119,6 +119,13 @@
                                     <action selector="logoutPress:" destination="VCH-Dy-UKo" eventType="touchUpInside" id="EH4-4d-lSy"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qmf-Qb-mRa">
+                                <rect key="frame" x="132" y="185" width="150" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="35Q-Tc-XGO"/>
+                                </constraints>
+                                <state key="normal" title="Create Group"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -127,7 +134,9 @@
                             <constraint firstItem="kuf-JQ-BhI" firstAttribute="centerX" secondItem="sj7-gS-JRX" secondAttribute="centerX" id="TO6-Xq-4kN"/>
                             <constraint firstItem="IcS-ok-IzH" firstAttribute="bottom" secondItem="zfb-ZN-Hna" secondAttribute="bottom" constant="108" id="U1F-t0-cRy"/>
                             <constraint firstItem="zfb-ZN-Hna" firstAttribute="top" secondItem="kuf-JQ-BhI" secondAttribute="bottom" constant="193" id="dQF-cq-Kmx"/>
+                            <constraint firstItem="Qmf-Qb-mRa" firstAttribute="top" secondItem="IcS-ok-IzH" secondAttribute="top" constant="141" id="n8X-OQ-VT9"/>
                             <constraint firstItem="IcS-ok-IzH" firstAttribute="trailing" secondItem="zfb-ZN-Hna" secondAttribute="trailing" constant="184" id="okb-pq-z4a"/>
+                            <constraint firstItem="Qmf-Qb-mRa" firstAttribute="centerX" secondItem="sj7-gS-JRX" secondAttribute="centerX" id="wYy-Lg-WPq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IcS-ok-IzH"/>
                     </view>

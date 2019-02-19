@@ -37,6 +37,15 @@ class Authentication {
     // Log User Out
     func userLogOut() -> Void {
         do {
+            let functions = Functions.functions()
+            let body = [
+                "deviceID": UserDefaults.standard.string(forKey: "notifID"),
+            ]
+            functions.httpsCallable("userLogout").call(body) { (result, error) in
+                if let error = error as NSError? {
+                    print(error.localizedDescription)
+                }
+            }
             try Auth.auth().signOut()
         } catch let error as NSError {
             print(error.localizedDescription)
