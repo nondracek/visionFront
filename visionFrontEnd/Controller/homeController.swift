@@ -8,20 +8,42 @@
 
 import UIKit
 import ExpandingMenu
+import Firebase
 
 class homeController: UIViewController {
 
+    let authObject = Authentication()
+    var handle: AuthStateDidChangeListenerHandle?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 //        
 //        _ = menuNavigator(currVC: self).getMenu()
+        // Firebase Auth Listener
+        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+            // What to do when login status changes
+            if let user = user {
+                print("Home Page")
+            } else {
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(false)
+        
+        // Close Firebase Auth Listener
+        Auth.auth().removeStateDidChangeListener(handle!)
     }
     
     @IBAction func buttonPress(_ sender: Any) {
         performSegue(withIdentifier: "justGo", sender: self)
     }
     
+    @IBAction func logoutPress(_ sender: Any) {
+        authObject.userLogOut()
+    }
     /*
     // MARK: - Navigation
 

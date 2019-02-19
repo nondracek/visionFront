@@ -57,6 +57,10 @@ class SingleBet {
         }
     }
     
+    func acceptBet(userID: String, username: String, betID: String, completion:((Error?) -> Void)?) -> Void {
+        
+    }
+    
     struct betStruct: Codable {
         let creator: String
         let amount: Float

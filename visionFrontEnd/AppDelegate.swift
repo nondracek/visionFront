@@ -8,6 +8,7 @@
 
 import UIKit
 import UserNotifications
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 //        registerForPushNotifications()
+        FirebaseApp.configure()
+        
         // Override point for customization after application launch.
         if let payload = launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] as? NSDictionary, let identifier = payload["storyboardID"] as? String {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -46,29 +49,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
-        UserDefaults.standard.set(nil, forKey: "authToken")
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        // Log out the user
+        do {
+            try Auth.auth().signOut()
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
     }
     
-    func application(
-        _ application: UIApplication,
-        didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data
-        ) {
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
         let token = tokenParts.joined()
-        if let user = UserDefaults.standard.string(forKey: "username") {
-            notifHandler.updateNotifID(user: user, notifID: token) {(error) in
-                if let error = error {
-                    print(error.localizedDescription)
-                }
-            }
-        }
-        print("Device Token: \(token)")
+        UserDefaults.standard.set(token, forKey: "notifID")
+        print("Device Token Set To: \(token)")
     }
     
-    func application(
-        _ application: UIApplication,
-        didFailToRegisterForRemoteNotificationsWithError error: Error) {
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         print("Failed to register: \(error)")
     }
     

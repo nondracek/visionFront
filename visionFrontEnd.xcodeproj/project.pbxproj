@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		7DA0E4CBD141C9B31E738481 /* Pods_visionFrontEnd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 807E67B9F22BE3100D395C21 /* Pods_visionFrontEnd.framework */; };
 		992F0519C9EA6ADFA6327798 /* Pods_visionFrontEndTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20BA00614A61E3CDA760603B /* Pods_visionFrontEndTests.framework */; };
+		C2505BB3220927E800E994B8 /* userModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2505BB2220927E800E994B8 /* userModel.swift */; };
+		C2505BB5220A407000E994B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C2505BB4220A407000E994B8 /* GoogleService-Info.plist */; };
 		C28D763221D279DF00403538 /* menuClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28D763121D279DF00403538 /* menuClass.swift */; };
 		C28D763421D2A41E00403538 /* profileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28D763321D2A41E00403538 /* profileController.swift */; };
 		C28D763621D2AF9B00403538 /* authenticationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28D763521D2AF9B00403538 /* authenticationModel.swift */; };
@@ -46,6 +48,8 @@
 		408FBD449D2465CC32FD65D4 /* Pods-visionFrontEndTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-visionFrontEndTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-visionFrontEndTests/Pods-visionFrontEndTests.debug.xcconfig"; sourceTree = "<group>"; };
 		807E67B9F22BE3100D395C21 /* Pods_visionFrontEnd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_visionFrontEnd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CAA8FD49210081A834E8493 /* Pods-visionFrontEndTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-visionFrontEndTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-visionFrontEndTests/Pods-visionFrontEndTests.release.xcconfig"; sourceTree = "<group>"; };
+		C2505BB2220927E800E994B8 /* userModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userModel.swift; sourceTree = "<group>"; };
+		C2505BB4220A407000E994B8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C28D763121D279DF00403538 /* menuClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuClass.swift; sourceTree = "<group>"; };
 		C28D763321D2A41E00403538 /* profileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileController.swift; sourceTree = "<group>"; };
 		C28D763521D2AF9B00403538 /* authenticationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = authenticationModel.swift; sourceTree = "<group>"; };
@@ -135,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				C2AF064421D9EA55002185AF /* visionFrontEnd.entitlements */,
+				C2505BB4220A407000E994B8 /* GoogleService-Info.plist */,
 				C2C458EA21C9A68100441704 /* Controller */,
 				C2C458E921C9A67800441704 /* View */,
 				C2C458E821C9A66F00441704 /* Model */,
@@ -163,6 +168,7 @@
 				C2C4589221D5CF1C004AFD8C /* singleBetModel.swift */,
 				C2C4589421D60EBF004AFD8C /* httpModel.swift */,
 				C29E8BFE21E7E40800E987FD /* notificationHandler.swift */,
+				C2505BB2220927E800E994B8 /* userModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -280,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2C458D321C987B400441704 /* LaunchScreen.storyboard in Resources */,
+				C2505BB5220A407000E994B8 /* GoogleService-Info.plist in Resources */,
 				C2C458D021C987B400441704 /* Assets.xcassets in Resources */,
 				C2C458CE21C987B300441704 /* Main.storyboard in Resources */,
 			);
@@ -318,19 +325,23 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-visionFrontEnd/Pods-visionFrontEnd-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/ExpandingMenu/ExpandingMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ExpandingMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -364,6 +375,7 @@
 			files = (
 				C2C4589521D60EBF004AFD8C /* httpModel.swift in Sources */,
 				C2D6A21C21C9AA0E0036A820 /* homeController.swift in Sources */,
+				C2505BB3220927E800E994B8 /* userModel.swift in Sources */,
 				C2C458CB21C987B300441704 /* logInController.swift in Sources */,
 				C2EA4C4B21CD7C8B0082616B /* CreateBetController.swift in Sources */,
 				C28D763821D2B08700403538 /* config.swift in Sources */,

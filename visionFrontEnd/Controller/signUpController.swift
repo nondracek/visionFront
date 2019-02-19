@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class signUpController: UIViewController {
 
@@ -15,24 +16,39 @@ class signUpController: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     
     let authObject = Authentication()
+    let NHObject = notificationHandler()
+    var handle: AuthStateDidChangeListenerHandle?
    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Firebase Auth Listener
+        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+            // What to do when login status changes
+            if let user = user {
+                if UserDefaults.standard.object(forKey: "notifID") == nil {
+                    self.NHObject.registerForPushNotifications()
+                }
+                self.authObject.sendNotifID()
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(false)
+        
+        // Close Firebase Auth Listener
+        Auth.auth().removeStateDidChangeListener(handle!)
     }
     
     @IBAction func signUpPressed(_ sender: Any) {
-        authObject .userSignUp(user: usernameField.text!, pass: passwordField.text!, email: emailField.text!, deviceID: authObject.getDeviceID()!){ (error) in
+        authObject.userSignUp(pass: passwordField.text!, email: emailField.text!){ (error) in
             if let error = error {
                 print(error.localizedDescription)
             }
         }
-        
-        if UserDefaults.standard.string(forKey: "authToken") != nil {
-            dismiss(animated: true, completion: nil)
-        }
-        
     }
     
     @IBAction func backPressed(_ sender: Any) {

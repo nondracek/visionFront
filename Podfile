@@ -10,6 +10,11 @@ target 'visionFrontEnd' do
   # Pods for visionFrontEnd
   pod 'ExpandingMenu', '~> 0.4'
   pod 'Alamofire', '~> 5.0.0.beta.1'
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Messaging'
+  pod 'Firebase/Functions'
 
   target 'visionFrontEndTests' do
     inherit! :search_paths

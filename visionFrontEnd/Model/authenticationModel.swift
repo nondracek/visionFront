@@ -8,91 +8,56 @@
 
 import Foundation
 import UIKit
+import Firebase
+import FirebaseFunctions
 
 class Authentication {
     
     let http = httpModel()
+    let notifHandler = notificationHandler()
     
-    func logUserIn(user: String, pass: String, deviceID: String, completion:((Error?) -> Void)?) {
-        //Initialize the URL session
-        guard let url = URL(string: serverVars.serverHost + "/users/login") else
-        {
-            completion?(CredentialErrors.invalidURLSet)
-            return
-        }
-        
-        let credentials = logInPost(username: user, password: pass, deviceToken: deviceID)
-        let encoder = JSONEncoder()
-        do {
-            let jsonData = try encoder.encode(credentials)
-            
-            let responseData = http.sendRequest(url: url, httpMethod: "POST", data: jsonData, headers: nil) {(error) in
+    // Log User In
+    func logUserIn(email: String, pass: String, completion:((Error?) -> Void)?) {
+        Auth.auth().signIn(withEmail: email, password: pass) { (authResult, error) in
+            if let error = error {
                 completion?(error)
             }
-            let parsedData = try JSONDecoder().decode(serverReturn.self, from: responseData)
-            let decodedString = http.decode(jwtToken: parsedData.token)
-            
-            UserDefaults.standard.set(decodedString["_id"], forKey: "userID")
-            UserDefaults.standard.set(parsedData.token, forKey: "authToken")
-        } catch {
-            completion?(error)
         }
     }
     
-    func userSignUp(user: String, pass: String, email: String, deviceID: String, completion:((Error?) -> Void)?) {
-        
-        //Initialize the URL session
-        guard let url = URL(string: serverVars.serverHost + "/users/signup") else
-        {
-            completion?(CredentialErrors.invalidURLSet)
-            return
-        }
-        
-        let credentials = signUpPost(username: email, name: user, password: pass, deviceToken: deviceID)
-        let encoder = JSONEncoder()
-        do {
-            let jsonData = try encoder.encode(credentials)
-            
-            let responseData = http.sendRequest(url: url, httpMethod: "POST", data: jsonData, headers: nil) {(error) in
+    // Sign User Up
+    func userSignUp(pass: String, email: String, completion:((Error?) -> Void)?) {
+        Auth.auth().createUser(withEmail: email, password: pass) { (authResult, error) in
+            if let error = error {
                 completion?(error)
             }
-            
-            let parsedData = try JSONDecoder().decode(serverReturn.self, from: responseData)
-            UserDefaults.standard.set(parsedData.token, forKey: "authToken")
-            
-        } catch {
-            completion?(error)
         }
     }
     
-    func getDeviceID() -> String? {
-        if let ID = UIDevice.current.identifierForVendor {
-//            let tokenParts = ID.map { data in String(format: "%02.2hhx", data) }
-//            let token = tokenParts.joined()
-            return "blah"
-        } else {
-            return nil
+    // Log User Out
+    func userLogOut() -> Void {
+        do {
+            try Auth.auth().signOut()
+        } catch let error as NSError {
+            print(error.localizedDescription)
         }
     }
     
-    struct logInPost: Codable {
-        let username: String
-        let password: String
-        let deviceToken: String
-    }
-    
-    struct signUpPost: Codable {
-        let username: String
-        let name: String
-        let password: String
-        let deviceToken: String
-    }
-    
-    struct serverReturn: Codable {
-        let token: String
-    }
-    
-    enum CredentialErrors: Error {
-        case invalidURLSet
+    // Try to add NotifID
+    func sendNotifID() {
+        if UserDefaults.standard.object(forKey: "notifID") == nil {
+            self.notifHandler.registerForPushNotifications()
+        }
+        
+        let functions = Functions.functions()
+        let body = [
+            "deviceID": UserDefaults.standard.string(forKey: "notifID"),
+            "deviceOS": "iOS"
+        ]
+        functions.httpsCallable("userLogin").call(body) { (result, error) in
+            if let error = error as NSError? {
+                print(error.localizedDescription)
+            }
+        }
     }
 }
